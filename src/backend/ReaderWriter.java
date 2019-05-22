@@ -57,17 +57,32 @@ public class ReaderWriter {
         System.out.println("what is balance? " + account.getBalance());
         return account.getBalance();
     }
+
+    public static void resetBalance(){
+        account.resetBalance();
+    }
     
-    public static class AddAPennyTask implements Runnable {
+    public static class AddAPennyTask extends Thread {
+        public int initialBalance;
+        public int finalBalance;
+
         public void run(){
-            account.deposit(2000);
+            int[] result = account.deposit(2000);
+            this.initialBalance = result[0];
+            this.finalBalance = result[1];
         }
     }
     
-    public static class RemoveAPennyTask implements Runnable {
+    public static class RemoveAPennyTask extends Thread{
+        public int initialBalance;
+        public int finalBalance;
+
         public void run(){
-            account.withdraw(1000);
+            int[] result = account.withdraw(1000);
+            this.initialBalance = result[0];
+            this.finalBalance = result[1];
         }
+
     }
     
     private static class Account {
@@ -76,6 +91,9 @@ public class ReaderWriter {
         
         public int getBalance(){
             return balance;
+        }
+        public void resetBalance(){
+            this.balance = 0;
         }
 
         private int getBalanceInternally() {
@@ -93,31 +111,39 @@ public class ReaderWriter {
             }
         }
 
-        public void deposit(int amount){
+        public int[] deposit(int amount){
+            int[] result = new int[2];
             try {
-                int newBalance = amount + this.getBalanceInternally();
+                result[0] = this.getBalanceInternally();
+                int newBalance = amount + result[0];
 
                 // delay deliberately added to magnify the data-corruption and make it easy to see
-                Thread.sleep(5);
+                Thread.sleep(100);
 
                 this.overwriteBalance(newBalance);
+                result[1] = newBalance;
             }
             catch (InterruptedException exception) {
                 exception.printStackTrace();
             }
+            return result;
         }
 
-        public void withdraw(int amount) {
+        public int[] withdraw(int amount) {
+            int[] result = new int[2];
             try {
-                int newBalance = this.getBalanceInternally() - amount;
+                result[0] = this.getBalanceInternally();
+                int newBalance = result[0] - amount;
 
                 // delay deliberately added to magnify the data-corruption and make it easy to see
-                Thread.sleep(5);
+                Thread.sleep(100);
 
                 this.overwriteBalance(newBalance);
+                result[1] = newBalance;
             } catch (InterruptedException exception) {
                 exception.printStackTrace();
             }
+            return result;
         }
     }
 }

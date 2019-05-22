@@ -50,15 +50,29 @@ public class ReaderWriterProblem {
         return account.getBalance();
     }
 
-    public static class AddAPennyTask implements Runnable {
+    public static void resetBalance(){
+        account.resetBalance();
+    }
+
+    public static class AddAPennyTask extends Thread{
+        public int initialBalance;
+        public int finalBalance;
+
         public void run(){
-            account.deposit(2000);
+            int[] result = account.deposit(2000);
+            this.initialBalance = result[0];
+            this.finalBalance = result[1];
         }
     }
 
-    public static class RemoveAPennyTask implements Runnable {
+    public static class RemoveAPennyTask extends Thread{
+        public int initialBalance;
+        public int finalBalance;
+
         public void run(){
-            account.withdraw(1000);
+            int[] result = account.withdraw(1000);
+            this.initialBalance = result[0];
+            this.finalBalance = result[1];
         }
     }
 
@@ -69,21 +83,31 @@ public class ReaderWriterProblem {
             return balance;
         }
 
-        public void deposit(int amount){
-            int newBalance = amount + balance;
-
-            //delay deliberately added to magnify the data-corruption and make it easy to see
-            try{
-                Thread.sleep(5);
-            }
-            catch (InterruptedException ex){
-            }
-
-            balance = newBalance;
+        public void resetBalance(){
+            this.balance = 0;
         }
 
-        public void withdraw(int amount){
-            int newBalance = balance - amount;
+        public int[] deposit(int amount){
+            int[] result = new int[2];
+            result[0] = balance;
+            int newBalance = amount + result[0];
+
+            //delay deliberately added to magnify the data-corruption and make it easy to see
+            try{
+                Thread.sleep(100);
+            }
+            catch (InterruptedException ex){
+            }
+
+            balance = newBalance;
+            result[1] = newBalance;
+            return result;
+        }
+
+        public int[] withdraw(int amount){
+            int[] result = new int[2];
+            result[0] = balance;
+            int newBalance = result[0] - amount;
 
             //delay deliberately added to magnify the data-corruption and make it easy to see
             try{
@@ -93,6 +117,8 @@ public class ReaderWriterProblem {
             }
 
             balance = newBalance;
+            result[1] = newBalance;
+            return result;
         }
     }
 }

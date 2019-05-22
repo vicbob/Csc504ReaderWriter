@@ -6,90 +6,1045 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unsynced.Controller">
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unsynced.Controller">
    <top>
-      <VBox prefHeight="54.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-          <MenuBar BorderPane.alignment="CENTER">
-              <menus>
-                  <Menu mnemonicParsing="false" text="File">
-                      <items>
-                          <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Close" />
-                      </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Help">
-                      <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
-                      </items>
-                  </Menu>
-              </menus>
-          </MenuBar>
-         <HBox prefHeight="46.0" prefWidth="600.0">
-            <children>
-               <Button mnemonicParsing="false" onAction="#goBack" text="Back">
-                  <HBox.margin>
-                     <Insets left="3.0" top="3.0" />
-                  </HBox.margin>
-               </Button>
-                 <Label alignment="CENTER" prefHeight="34.0" prefWidth="231.0" text="Unsynchronized">
-                  <font>
-                     <Font name="Calibri Light" size="22.0" />
-                  </font>
-                  <HBox.margin>
-                     <Insets left="130.0" />
-                  </HBox.margin>
-                 </Label>
-                <Button mnemonicParsing="false" onAction="#start" text="Start">
-                    <HBox.margin>
-                        <Insets left="130.0" />
-                    </HBox.margin>
-                </Button>
-            </children>
-         </HBox>
-      </VBox>
+       <VBox prefHeight="54.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+           <MenuBar BorderPane.alignment="CENTER">
+               <menus>
+                   <Menu mnemonicParsing="false" text="File">
+                       <items>
+                           <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Close" />
+                       </items>
+                   </Menu>
+                   <Menu mnemonicParsing="false" text="Help">
+                       <items>
+                           <MenuItem mnemonicParsing="false" text="About" />
+                       </items>
+                   </Menu>
+               </menus>
+           </MenuBar>
+           <HBox prefHeight="46.0" prefWidth="600.0">
+               <children>
+                   <Button mnemonicParsing="false" onAction="#goBack" prefHeight="29.0" prefWidth="65.0" style="-fx-background-color: white;" text="BACK" textFill="#1d4d90">
+                       <HBox.margin>
+                           <Insets left="3.0" top="3.0" />
+                       </HBox.margin>
+                       <effect>
+                           <InnerShadow color="#a1afb2" radius="8.5175" width="15.07" />
+                       </effect>
+                       <font>
+                           <Font name="System Bold" size="13.0" />
+                       </font>
+                   </Button>
+                   <Button fx:id="start" mnemonicParsing="false" onAction="#start" prefHeight="29.0" prefWidth="70.0" style="-fx-background-color: white;" text="START" textFill="#1d4d90">
+                       <HBox.margin>
+                           <Insets left="1220.0" top="3.0" />
+                       </HBox.margin>
+                       <effect>
+                           <InnerShadow color="#a1afb2" radius="8.5175" width="15.07" />
+                       </effect>
+                       <font>
+                           <Font name="System Bold" size="13.0" />
+                       </font>
+                   </Button>
+               </children>
+           </HBox>
+       </VBox>
    </top>
     <center>
-        <VBox alignment="CENTER" prefHeight="346.0" prefWidth="486.0" BorderPane.alignment="CENTER">
-            <children>
-                <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0">
-                    <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" text="Number of threads: 10">
-                            <font>
-                                <Font size="25.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER" prefHeight="71.0" prefWidth="600.0">
-                    <children>
-                        <Label text="Amount expected:  5000">
-                            <font>
-                                <Font size="25.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER" prefHeight="83.0" prefWidth="600.0">
-                    <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" text="Actual Amount:">
-                            <font>
-                                <Font size="25.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lbl">
-                            <font>
-                                <Font size="25.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="20.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children></HBox>
-            </children>
-        </VBox>
-    </center>
+    <VBox alignment="TOP_CENTER" prefHeight="682.0" prefWidth="1354.0" style="-fx-background-color: black;" BorderPane.alignment="TOP_CENTER">
+        <children>
+            <HBox alignment="TOP_CENTER" maxWidth="1366.0" prefHeight="202.0" prefWidth="1364.0">
+                <children>
+                    <VBox fx:id="vBox1" maxWidth="200.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="200.0">
+                        <children>
+                            <Button depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="65.0" scaleZ="0.0" style="-fx-background-insets: 0; -fx-border-width: 0; -fx-focus-traversable: false;" styleClass="image">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="60.0" top="7.0" />
+                                </VBox.margin>
+                            </Button>
+
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="User 1" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox>
+                                <children>
+                                    <Label text="Operation:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Deposit" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="State:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="state1" text="Has not deposited" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox minWidth="200.0">
+                                <children>
+                                    <Label text="Initial Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="inBalance1" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets left="5.0" />
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Final Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="finalBalance1" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+
+                        </children>
+                        <HBox.margin>
+                            <Insets left="50.0" right="60.0" />
+                        </HBox.margin>
+                    </VBox>
+
+                    <VBox fx:id="vBox2" maxWidth="200.0" minWidth="200.0">
+                        <children>
+                            <Button depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="65.0" scaleZ="0.0" style="-fx-background-insets: 0; -fx-border-width: 0; -fx-focus-traversable: false;" styleClass="image">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="60.0" top="7.0" />
+                                </VBox.margin>
+                            </Button>
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="User 2" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox>
+                                <children>
+                                    <Label text="Operation:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Deposit" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="State:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="state2" text="Has not deposited" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Initial Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="inBalance2" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets left="5.0" />
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Final Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="finalBalance2" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+
+                        </children>
+                        <HBox.margin>
+                            <Insets right="60.0" />
+                        </HBox.margin>
+                    </VBox>
+
+                    <VBox fx:id="vBox3" maxWidth="200.0" minWidth="200.0">
+                        <children>
+                            <Button depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="65.0" scaleZ="0.0" style="-fx-background-insets: 0; -fx-border-width: 0; -fx-focus-traversable: false;" styleClass="image">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="60.0" top="7.0" />
+                                </VBox.margin>
+                            </Button>
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="User 3" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox>
+                                <children>
+                                    <Label text="Operation:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Deposit" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="State:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="state3" text="Has not deposited" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Initial Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="inBalance3" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets left="5.0" />
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Final Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="finalBalance3" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                        </children>
+                        <HBox.margin>
+                            <Insets right="60.0" />
+                        </HBox.margin>
+                    </VBox>
+
+                    <VBox fx:id="vBox4" maxWidth="200.0" minWidth="200.0">
+                        <children>
+                            <Button depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="65.0" scaleZ="0.0" style="-fx-background-insets: 0; -fx-border-width: 0; -fx-focus-traversable: false;" styleClass="image">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="60.0" top="7.0" />
+                                </VBox.margin>
+                            </Button>
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="User 4" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox>
+                                <children>
+                                    <Label text="Operation:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Deposit" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="State:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="state4" text="Has not deposited" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Initial Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="inBalance4" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets left="5.0" />
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Final Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="finalBalance4" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+
+                        </children>
+                        <HBox.margin>
+                            <Insets right="60.0" />
+                        </HBox.margin>
+                    </VBox>
+
+                    <VBox fx:id="vBox5" maxWidth="200.0" minWidth="200.0">
+                        <children>
+                            <Button depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="65.0" scaleZ="0.0" style="-fx-background-insets: 0; -fx-border-width: 0; -fx-focus-traversable: false;" styleClass="image">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="60.0" top="7.0" />
+                                </VBox.margin>
+                            </Button>
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="User 5" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox>
+                                <children>
+                                    <Label text="Operation:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Deposit" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="State:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="state5" text="Has not deposited" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Initial Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="inBalance5" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets left="5.0" />
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Final Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="finalBalance5" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+
+                        </children>
+                        <HBox.margin>
+                            <Insets right="60.0" />
+                        </HBox.margin>
+                    </VBox>
+
+                </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="41.0" prefWidth="1366.0">
+                <children>
+                    <Label text="Balance expected:  5000" textFill="WHITE">
+                        <font>
+                            <Font size="25.0" />
+                        </font>
+                    </Label>
+                </children>
+                <VBox.margin>
+                    <Insets top="20.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="43.0" prefWidth="1366.0">
+                <children>
+                    <Label alignment="CENTER" contentDisplay="CENTER" text="Balance :" textFill="WHITE">
+                        <font>
+                            <Font size="25.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets />
+                        </HBox.margin>
+                    </Label>
+                    <Label fx:id="lbl" textFill="WHITE">
+                        <font>
+                            <Font size="25.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="20.0" />
+                        </HBox.margin>
+                    </Label>
+                </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" maxWidth="1366.0" minWidth="1366.0" prefHeight="120.0" prefWidth="1366.0">
+                <children>
+                    <VBox fx:id="vBox6" maxWidth="200.0" minWidth="210.0" prefHeight="120.0" prefWidth="200.0">
+                        <children>
+                            <Button depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="65.0" scaleZ="0.0" style="-fx-background-insets: 0; -fx-border-width: 0; -fx-focus-traversable: false;" styleClass="image">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="60.0" top="7.0" />
+                                </VBox.margin>
+                            </Button>
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="User 6" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox>
+                                <children>
+                                    <Label text="Operation:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Deposit" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="State:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="state6" text="Has not withdrawn" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Initial Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="inBalance6" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets left="5.0" />
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Final Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="finalBalance6" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+
+                        </children>
+                        <HBox.margin>
+                            <Insets left="50.0" right="60.0" />
+                        </HBox.margin>
+                    </VBox>
+
+                    <VBox fx:id="vBox7" maxWidth="200.0" minWidth="210.0">
+                        <children>
+                            <Button depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="65.0" scaleZ="0.0" style="-fx-background-insets: 0; -fx-border-width: 0; -fx-focus-traversable: false;" styleClass="image">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="60.0" top="7.0" />
+                                </VBox.margin>
+                            </Button>
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="User 7" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox>
+                                <children>
+                                    <Label text="Operation:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Deposit" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="State:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="state7" text="Has not withdrawn" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Initial Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="inBalance7" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets left="5.0" />
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Final Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="finalBalance7" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+
+                        </children>
+                        <HBox.margin>
+                            <Insets right="60.0" />
+                        </HBox.margin>
+                    </VBox>
+
+                    <VBox fx:id="vBox8" maxWidth="200.0" minWidth="210.0">
+                        <children>
+                            <Button depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="65.0" scaleZ="0.0" style="-fx-background-insets: 0; -fx-border-width: 0; -fx-focus-traversable: false;" styleClass="image">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="60.0" top="7.0" />
+                                </VBox.margin>
+                            </Button>
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="User 8" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox>
+                                <children>
+                                    <Label text="Operation:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Deposit" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="State:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="state8" text="Has not withdrawn" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Initial Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="inBalance8" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets left="5.0" />
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Final Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="finalBalance8" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+
+                        </children>
+                        <HBox.margin>
+                            <Insets right="60.0" />
+                        </HBox.margin>
+                    </VBox>
+
+                    <VBox fx:id="vBox9" maxWidth="200.0" minWidth="210.0">
+                        <children>
+                            <Button depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="65.0" scaleZ="0.0" style="-fx-background-insets: 0; -fx-border-width: 0; -fx-focus-traversable: false;" styleClass="image">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="60.0" top="7.0" />
+                                </VBox.margin>
+                            </Button>
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="User 9" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox>
+                                <children>
+                                    <Label text="Operation:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Deposit" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="State:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="state9" text="Has not withdrawn" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Initial Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="inBalance9" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets left="5.0" />
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Final Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="finalBalance9" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+
+                        </children>
+                        <HBox.margin>
+                            <Insets right="60.0" />
+                        </HBox.margin>
+                    </VBox>
+
+                    <VBox fx:id="vBox10" maxWidth="200.0" minWidth="210.0">
+                        <children>
+                            <Button depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="65.0" scaleZ="0.0" style="-fx-background-insets: 0; -fx-border-width: 0; -fx-focus-traversable: false;" styleClass="image">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="60.0" top="7.0" />
+                                </VBox.margin>
+                            </Button>
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="User 10" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox>
+                                <children>
+                                    <Label text="Operation:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Deposit" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="State:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="state10" text="Has not withdrawn" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria Bold" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Initial Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="inBalance10" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets left="5.0" />
+                                        </padding>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                            <HBox>
+                                <children>
+                                    <Label text="Final Balance:" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="finalBalance10" text="" textFill="WHITE">
+                                        <font>
+                                            <Font name="Cambria" size="18.0" />
+                                        </font>
+                                        <HBox.margin>
+                                            <Insets left="5.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                            </HBox>
+
+                        </children>
+                        <HBox.margin>
+                            <Insets right="60.0" />
+                        </HBox.margin>
+                    </VBox>
+                </children>
+            </HBox>
+        </children>
+        <BorderPane.margin>
+            <Insets top="40.0" />
+        </BorderPane.margin>
+    </VBox>
+</center>
 </BorderPane>

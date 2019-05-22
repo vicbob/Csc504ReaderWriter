@@ -10,10 +10,14 @@ public class Controller {
 
     public void goToUnsynchronized(){
         Main.window.setScene(Main.unsyncedpage);
+//        Main.window.setMaximized(false);
+        Main.window.setMaximized(true);
     }
 
     public void goToSynchronized(){
-            Main.window.setScene(Main.syncedpage);
+        Main.window.setScene(Main.syncedpage);
+//        Main.window.setMaximized(false);
+        Main.window.setMaximized(true);
     }
 
    public void closeWindow(){
