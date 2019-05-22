@@ -593,7 +593,7 @@
                                             <Font name="Cambria" size="18.0" />
                                         </font>
                                     </Label>
-                                    <Label text="Deposit" textFill="WHITE">
+                                    <Label text="Withdraw" textFill="WHITE">
                                         <font>
                                             <Font name="Cambria Bold" size="18.0" />
                                         </font>
@@ -687,7 +687,7 @@
                                             <Font name="Cambria" size="18.0" />
                                         </font>
                                     </Label>
-                                    <Label text="Deposit" textFill="WHITE">
+                                    <Label text="Withdraw" textFill="WHITE">
                                         <font>
                                             <Font name="Cambria Bold" size="18.0" />
                                         </font>
@@ -781,7 +781,7 @@
                                             <Font name="Cambria" size="18.0" />
                                         </font>
                                     </Label>
-                                    <Label text="Deposit" textFill="WHITE">
+                                    <Label text="Withdraw" textFill="WHITE">
                                         <font>
                                             <Font name="Cambria Bold" size="18.0" />
                                         </font>
@@ -875,7 +875,7 @@
                                             <Font name="Cambria" size="18.0" />
                                         </font>
                                     </Label>
-                                    <Label text="Deposit" textFill="WHITE">
+                                    <Label text="Withdraw" textFill="WHITE">
                                         <font>
                                             <Font name="Cambria Bold" size="18.0" />
                                         </font>
@@ -969,7 +969,7 @@
                                             <Font name="Cambria" size="18.0" />
                                         </font>
                                     </Label>
-                                    <Label text="Deposit" textFill="WHITE">
+                                    <Label text="Withdraw" textFill="WHITE">
                                         <font>
                                             <Font name="Cambria Bold" size="18.0" />
                                         </font>
